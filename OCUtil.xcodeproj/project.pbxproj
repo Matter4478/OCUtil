@@ -8,21 +8,37 @@
 
 /* Begin PBXBuildFile section */
 		6692FDC7250B960800011A04 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6692FDC6250B960800011A04 /* AppDelegate.swift */; };
-		6692FDC9250B960800011A04 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6692FDC8250B960800011A04 /* ViewController.swift */; };
+		6692FDC9250B960800011A04 /* PlistViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6692FDC8250B960800011A04 /* PlistViewController.swift */; };
 		6692FDCC250B960800011A04 /* OCUtil.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 6692FDCA250B960800011A04 /* OCUtil.xcdatamodeld */; };
 		6692FDCE250B960A00011A04 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6692FDCD250B960A00011A04 /* Assets.xcassets */; };
 		6692FDD1250B960A00011A04 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6692FDCF250B960A00011A04 /* Main.storyboard */; };
+		6692FDDA250BFB6100011A04 /* OutlineFeed.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6692FDD9250BFB6100011A04 /* OutlineFeed.swift */; };
+		6692FDDD250BFB9300011A04 /* Tool+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6692FDDB250BFB9300011A04 /* Tool+CoreDataClass.swift */; };
+		6692FDDE250BFB9300011A04 /* Tool+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6692FDDC250BFB9300011A04 /* Tool+CoreDataProperties.swift */; };
+		6692FDE0250C99AC00011A04 /* Plist.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6692FDDF250C99AC00011A04 /* Plist.storyboard */; };
+		6692FDE2250C9ADF00011A04 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6692FDE1250C9ADF00011A04 /* MainViewController.swift */; };
+		6692FDE6250CD9B500011A04 /* UtilityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6692FDE5250CD9B500011A04 /* UtilityViewController.swift */; };
+		6692FDE8250D12BB00011A04 /* ManagerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6692FDE7250D12BB00011A04 /* ManagerViewController.swift */; };
+		6692FDEA250D12C900011A04 /* Manager.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6692FDE9250D12C900011A04 /* Manager.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		6692FDC3250B960800011A04 /* OCUtil.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OCUtil.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6692FDC6250B960800011A04 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		6692FDC8250B960800011A04 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		6692FDC8250B960800011A04 /* PlistViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlistViewController.swift; sourceTree = "<group>"; };
 		6692FDCB250B960800011A04 /* OCUtil.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = OCUtil.xcdatamodel; sourceTree = "<group>"; };
 		6692FDCD250B960A00011A04 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		6692FDD0250B960A00011A04 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		6692FDD2250B960A00011A04 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6692FDD3250B960A00011A04 /* OCUtil.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = OCUtil.entitlements; sourceTree = "<group>"; };
+		6692FDD9250BFB6100011A04 /* OutlineFeed.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OutlineFeed.swift; sourceTree = "<group>"; };
+		6692FDDB250BFB9300011A04 /* Tool+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Tool+CoreDataClass.swift"; sourceTree = "<group>"; };
+		6692FDDC250BFB9300011A04 /* Tool+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Tool+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		6692FDDF250C99AC00011A04 /* Plist.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Plist.storyboard; sourceTree = "<group>"; };
+		6692FDE1250C9ADF00011A04 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		6692FDE5250CD9B500011A04 /* UtilityViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UtilityViewController.swift; sourceTree = "<group>"; };
+		6692FDE7250D12BB00011A04 /* ManagerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManagerViewController.swift; sourceTree = "<group>"; };
+		6692FDE9250D12C900011A04 /* Manager.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Manager.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -55,13 +71,21 @@
 		6692FDC5250B960800011A04 /* OCUtil */ = {
 			isa = PBXGroup;
 			children = (
-				6692FDC6250B960800011A04 /* AppDelegate.swift */,
-				6692FDC8250B960800011A04 /* ViewController.swift */,
+				6692FDDB250BFB9300011A04 /* Tool+CoreDataClass.swift */,
+				6692FDDC250BFB9300011A04 /* Tool+CoreDataProperties.swift */,
+				6692FDE1250C9ADF00011A04 /* MainViewController.swift */,
+				6692FDC8250B960800011A04 /* PlistViewController.swift */,
 				6692FDCD250B960A00011A04 /* Assets.xcassets */,
 				6692FDCF250B960A00011A04 /* Main.storyboard */,
+				6692FDDF250C99AC00011A04 /* Plist.storyboard */,
+				6692FDE7250D12BB00011A04 /* ManagerViewController.swift */,
+				6692FDE9250D12C900011A04 /* Manager.storyboard */,
+				6692FDE5250CD9B500011A04 /* UtilityViewController.swift */,
+				6692FDC6250B960800011A04 /* AppDelegate.swift */,
 				6692FDD2250B960A00011A04 /* Info.plist */,
 				6692FDD3250B960A00011A04 /* OCUtil.entitlements */,
 				6692FDCA250B960800011A04 /* OCUtil.xcdatamodeld */,
+				6692FDD9250BFB6100011A04 /* OutlineFeed.swift */,
 			);
 			path = OCUtil;
 			sourceTree = "<group>";
@@ -124,6 +148,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6692FDEA250D12C900011A04 /* Manager.storyboard in Resources */,
+				6692FDE0250C99AC00011A04 /* Plist.storyboard in Resources */,
 				6692FDCE250B960A00011A04 /* Assets.xcassets in Resources */,
 				6692FDD1250B960A00011A04 /* Main.storyboard in Resources */,
 			);
@@ -136,9 +162,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6692FDC9250B960800011A04 /* ViewController.swift in Sources */,
+				6692FDE2250C9ADF00011A04 /* MainViewController.swift in Sources */,
+				6692FDE6250CD9B500011A04 /* UtilityViewController.swift in Sources */,
+				6692FDDD250BFB9300011A04 /* Tool+CoreDataClass.swift in Sources */,
+				6692FDE8250D12BB00011A04 /* ManagerViewController.swift in Sources */,
+				6692FDDA250BFB6100011A04 /* OutlineFeed.swift in Sources */,
+				6692FDC9250B960800011A04 /* PlistViewController.swift in Sources */,
 				6692FDCC250B960800011A04 /* OCUtil.xcdatamodeld in Sources */,
 				6692FDC7250B960800011A04 /* AppDelegate.swift in Sources */,
+				6692FDDE250BFB9300011A04 /* Tool+CoreDataProperties.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -283,6 +315,7 @@
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
+				MACOSX_DEPLOYMENT_TARGET = 10.13;
 				PRODUCT_BUNDLE_IDENTIFIER = com.merlijn.OCUtil;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
@@ -303,6 +336,7 @@
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
+				MACOSX_DEPLOYMENT_TARGET = 10.13;
 				PRODUCT_BUNDLE_IDENTIFIER = com.merlijn.OCUtil;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
