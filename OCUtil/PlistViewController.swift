@@ -50,9 +50,6 @@ extension PlistViewController: NSOutlineViewDataSource{
     }
 
     func outlineView(_ outlineView: NSOutlineView, isItemExpandable item: Any) -> Bool {
-        if let data = item as? OutlineFeed{
-            return false
-        }
         return false
     }
 

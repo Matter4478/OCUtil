@@ -9,13 +9,25 @@
 import Foundation
 import Cocoa
 
-var selected: OutlineFeed = OutlineFeed(name: "", adress: "", id: UUID(), headline: "", body: "", fileAdress: "", runAdress: "/Volume/MacOS/")
+var selected: OutlineFeed = OutlineFeed(name: "No Application Selected", adress: "", id: UUID(), headline: "", body: "", fileAdress: "", runAdress: "/Volume/MacOS/")
 
 var data: [OutlineFeed] = []
 
+var rootPath: String = ""
+
 class MainViewController: NSViewController{
     
+    static let notificationName = Notification.Name("Refresh")
+    
+    @objc func onNotification(notification: Notification){
+        print("refresh ordered")
+        Refresh(self)
+        
+    }
+    
     var content: [String] = []
+    
+    
     
     func checkFolder(root: String){
         do {
@@ -26,26 +38,28 @@ class MainViewController: NSViewController{
         }
         
         content.forEach{item in
+            print(item)
             let dirurl = URL(string: root)
-            let url = dirurl?.appendingPathComponent(item)
-            
-            if (url?.absoluteString.contains(".app"))!{
-                print("\(url?.absoluteString ?? "") is an executable .app")
-                let result = OutlineFeed(name: item, adress: "", id: UUID(), headline: "", body: "", fileAdress: dirurl?.absoluteString ?? "", runAdress: url?.absoluteString ?? "")
+            let url = dirurl!.appendingPathComponent(item)
+            print(" file url: \(String(describing: url))")
+            print("path url: \(String(describing: dirurl))")
+            if (url.absoluteString.contains(".app")){
+                print("\(url.absoluteString ) is an executable .app")
+                let result = OutlineFeed(name: item, adress: "", id: UUID(), headline: "", body: "", fileAdress: dirurl!.absoluteString , runAdress: url.absoluteString )
                 data.append(result)
                 print(result)
-            } else if (url?.absoluteString.contains(".command"))!{
-                print("\(url?.absoluteString ?? "") is an executable .command")
-                let result = OutlineFeed(name: item, adress: "", id: UUID(), headline: "", body: "", fileAdress: dirurl?.absoluteString ?? "", runAdress: url?.absoluteString ?? "")
+            } else if (url.absoluteString.contains(".command")){
+                print("\(url.absoluteString ) is an executable .command")
+                let result = OutlineFeed(name: item, adress: "", id: UUID(), headline: "", body: "", fileAdress:   dirurl!.absoluteString , runAdress: url.absoluteString )
                 data.append(result)
                 print(result)
             } else {
-                print("\(url?.absoluteString ?? "") was not an executable file")
+                print("\(url.absoluteString ) was not an executable file")
                 var dir: ObjCBool = false
-                print("\(url?.absoluteString ?? "") is directory: \(dir.boolValue)")
-                FileManager.default.fileExists(atPath: url!.absoluteString, isDirectory: &dir)
+                FileManager.default.fileExists(atPath: url.relativePath, isDirectory: &dir)
+                print("\(url.absoluteString ) is directory: \(dir.boolValue)")
                 if dir.boolValue == true {
-                    checkFolder(root: url!.absoluteString)
+                    checkFolder(root: url.absoluteString)
                 }
             }
             
@@ -67,19 +81,58 @@ class MainViewController: NSViewController{
         NSWorkspace.shared.open(app)
     }
     @IBAction func ManageUtil(_ sender: Any) {
-        print("Managing \(selected.name)")
-        self.performSegue(withIdentifier: "ManagerSegue", sender: self)
+        if selected.name != "No Application Selected"{
+            print("Managing \(selected.name)")
+            self.performSegue(withIdentifier: "ManagerSegue", sender: self)
+        }
     }
     
     @IBOutlet weak var UtilName: NSTextField!
     
+    @IBAction func Refresh(_ sender: Any) {
+        data = []
+        var root = FileManager.default.homeDirectoryForCurrentUser
+        root.appendPathComponent("Downloads/OCUtil")
+        if FileManager.default.fileExists(atPath: root.path) == false{
+            print("creating OCUtil directory at: \(root.path)")
+            do {
+                try FileManager.default.createDirectory(at: root, withIntermediateDirectories: true, attributes: [:])
+            } catch {
+                print(error)
+            }
+        }
+        rootPath = root.path
+        print("root path: \(root)")
+        checkFolder(root: root.path)
+        Outline.reloadData()
+    }
+    
+    @IBAction func Download(_ sender: Any) {
+        self.performSegue(withIdentifier: "Download", sender: self)
+    }
+    @IBAction func Help(_ sender: Any) {
+        print("implement help here")
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
         print("MainViewController: viewDidLoad()")
         
+        //adding observer to check if another view wants mainviewcontroller to do a thing
+        NotificationCenter.default.addObserver(self, selector: #selector(onNotification(notification:)), name: NSNotification.Name(rawValue: "Refresh"), object: nil)
         
-        let root = FileManager.default.currentDirectoryPath
-        checkFolder(root: root)
+        var root = FileManager.default.homeDirectoryForCurrentUser
+        root.appendPathComponent("Downloads/OCUtil")
+        if FileManager.default.fileExists(atPath: root.path) == false{
+            print("creating OCUtil directory at: \(root.path)")
+            do {
+                try FileManager.default.createDirectory(at: root, withIntermediateDirectories: true, attributes: [:])
+            } catch {
+                print(error)
+            }
+        }
+        rootPath = root.path
+        print("root path: \(root)")
+        checkFolder(root: root.path)
 
         
         Outline.outlineTableColumn?.headerCell.stringValue = "Utilities"
@@ -89,6 +142,13 @@ class MainViewController: NSViewController{
         
         //Outline.outlineTableColumn!.headerCell.stringValue = "Utilities"
         }
+    
+    override func viewDidDisappear() {
+        super.viewDidDisappear()
+        //stop listening for notifications
+        NotificationCenter.default.removeObserver(self)
+    }
+    
     override var representedObject: Any?{
         didSet{
             

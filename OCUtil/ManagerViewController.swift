@@ -23,26 +23,27 @@ class ManagerViewController: NSViewController{
 //            print(error)
 //        }
     }
-    @IBAction func Update(_ sender: Any) {
-        //NSWorkspace.shared.open(<#T##url: URL##URL#>)
-    }
+
     @IBAction func LocalFiles(_ sender: Any) {
         let url = URL(fileURLWithPath: selected.fileAdress, isDirectory: true)
         NSWorkspace.shared.open(url)
     }
     @IBAction func Remove(_ sender: Any) {
             do{
-                try FileManager.default.removeItem(atPath: selected.fileAdress)
+                try FileManager.default.removeItem(at: URL(fileURLWithPath: selected.fileAdress))
+                NotificationCenter.default.post(Notification(name: MainViewController.notificationName, object: nil, userInfo: ["Refresh" : true]))
+                selected = OutlineFeed.init(name: "No Application Selected", adress: "", id: UUID(), headline: "", body: "", fileAdress: "", runAdress: "")
+                self.dismiss(self)
             } catch {
                 print(error)
             }
-        dismiss(self)
     }
     @IBOutlet weak var Name: NSTextField!
     override func viewDidLoad() {
         super.viewDidLoad()
         Name.stringValue = selected.name
     }
+    
     
     override var representedObject: Any?{
         didSet{
