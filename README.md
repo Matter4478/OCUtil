@@ -24,8 +24,8 @@ Download release.zip, extract and drag OCUtil.app to Applications.
   This package is licensed under the MIT license.
  
   This package relies on:
- - Alamofire: MIT License - [a link](https://github.com/Alamofire/Alamofire/blob/master/LICENSE)
- - ZIPFoundation: MIT License - [a link](https://github.com/weichsel/ZIPFoundation/blob/master/LICENSE)
+ - Alamofire: MIT License - [Link](https://github.com/Alamofire/Alamofire/blob/master/LICENSE)
+ - ZIPFoundation: MIT License - [Link](https://github.com/weichsel/ZIPFoundation/blob/master/LICENSE)
  
 
 
