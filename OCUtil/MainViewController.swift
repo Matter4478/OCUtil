@@ -111,7 +111,8 @@ class MainViewController: NSViewController{
         self.performSegue(withIdentifier: "Download", sender: self)
     }
     @IBAction func Help(_ sender: Any) {
-        print("implement help here")
+        print("README.md")
+        NSWorkspace.shared.open(URL(string: "https://github.com/Matter4478/OCUtil/blob/master/README.md")!)
     }
     override func viewDidLoad() {
         super.viewDidLoad()
