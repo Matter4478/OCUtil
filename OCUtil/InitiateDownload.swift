@@ -14,9 +14,33 @@ import ZIPFoundation
 class InitiateDownload: NSViewController{
     
     
+    @IBOutlet weak var LocalTextField: NSTextField!
     @IBOutlet weak var TextField: NSTextField!
     @IBOutlet weak var Indicator: NSProgressIndicator!
     @IBOutlet weak var Status: NSTextField!
+    @IBOutlet weak var LocalStatus: NSTextField!
+    @IBOutlet weak var LocalName: NSTextField!
+    var ManagedContext: NSManagedObjectContext?
+    
+    @IBAction func AddLocal(_ sender: Any) {
+        print("saving local")
+        if LocalTextField != nil, LocalName != nil, ManagedContext != nil{
+            let file = Tool(context: ManagedContext!)
+            file.fileAdress = LocalTextField.stringValue
+            file.name = LocalName!.stringValue
+            file.adress = ""
+            file.body = ""
+            file.headline = ""
+            file.id = UUID()
+            print(file)
+            do{
+                try ManagedContext!.save()
+            } catch {
+                print(error)
+            }
+            self.dismiss(self)
+        }
+    }
     
     @IBAction func Start(_ sender: Any) {
         Indicator.isIndeterminate = true
@@ -73,6 +97,9 @@ class InitiateDownload: NSViewController{
         
         Indicator.doubleValue = 0.0
         
+        //connecting managed object context
+        let delegate = NSApplication.shared.delegate as! AppDelegate
+        ManagedContext = delegate.persistentContainer.viewContext
     }
     
     override var representedObject: Any?{

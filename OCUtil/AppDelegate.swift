@@ -8,6 +8,11 @@
 
 import Cocoa
 
+
+
+//global variables
+
+
 @NSApplicationMain
 class AppDelegate: NSObject, NSApplicationDelegate {
 
@@ -16,8 +21,10 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     }
 
     func applicationDidFinishLaunching(_ aNotification: Notification) {
-        print("application did finish launching!")
-        // Insert code here to initialize your application
+        print("applicationDidFinishLaunching()")
+        
+        
+        
     }
 
     func applicationWillTerminate(_ aNotification: Notification) {

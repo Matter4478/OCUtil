@@ -705,7 +705,7 @@
         <!--Main View Controller-->
         <scene sceneID="hIz-AP-VOD">
             <objects>
-                <viewController id="XfG-lQ-9wD" customClass="MainViewController" customModule="OCUtil" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="MainViewController" id="XfG-lQ-9wD" customClass="MainViewController" customModule="OCUtil" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" id="m2S-Jp-Qdl">
                         <rect key="frame" x="0.0" y="0.0" width="480" height="383"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -895,7 +895,6 @@
                         </subviews>
                     </view>
                     <connections>
-                        <outlet property="ManagedObjectContext" destination="fjm-wj-Rjr" id="hdp-4o-I57"/>
                         <outlet property="Outline" destination="jcX-Mx-tne" id="2Rj-Fy-PPd"/>
                         <outlet property="UtilName" destination="hEV-fM-Oum" id="IAS-ph-Oo4"/>
                         <segue destination="Uzg-eY-Emc" kind="modal" identifier="ManagerSegue" id="156-SI-6Cn"/>
@@ -903,7 +902,6 @@
                     </connections>
                 </viewController>
                 <customObject id="rPt-NT-nkU" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
-                <managedObjectContext id="fjm-wj-Rjr"/>
             </objects>
             <point key="canvasLocation" x="75" y="654.5"/>
         </scene>

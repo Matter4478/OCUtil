@@ -8,6 +8,7 @@
 
 import Foundation
 import Cocoa
+import CoreData
 
 var selected: OutlineFeed = OutlineFeed(name: "No Application Selected", adress: "", id: UUID(), headline: "", body: "", fileAdress: "", runAdress: "/Volume/MacOS/")
 
@@ -71,7 +72,8 @@ class MainViewController: NSViewController{
 
     
     
-    @IBOutlet var ManagedObjectContext: NSManagedObjectContext!
+    var ManagedContext : NSManagedObjectContext?
+    
     
     @IBOutlet weak var Outline: NSOutlineView!
     
@@ -120,6 +122,26 @@ class MainViewController: NSViewController{
         
         //adding observer to check if another view wants mainviewcontroller to do a thing
         NotificationCenter.default.addObserver(self, selector: #selector(onNotification(notification:)), name: NSNotification.Name(rawValue: "Refresh"), object: nil)
+        
+        //connecting managed object context
+        let delegate = NSApplication.shared.delegate as! AppDelegate
+        ManagedContext = delegate.persistentContainer.viewContext
+        
+        //fetching data
+        let fetch = NSFetchRequest<NSFetchRequestResult>(entityName: "Tool")
+        print(ManagedContext)
+        do {
+            let result = try ManagedContext?.fetch(fetch) as! [Tool]
+            result.forEach { item in
+                let outline = OutlineFeed.init(name: item.name, adress: item.adress, id: item.id, headline: item.headline, body: item.body, fileAdress: item.fileAdress, runAdress: item.runAdress)
+                data.append(outline)
+            }
+        } catch {
+            print(error)
+        }
+        
+        
+        
         
         var root = FileManager.default.homeDirectoryForCurrentUser
         root.appendPathComponent("Downloads/OCUtil")
