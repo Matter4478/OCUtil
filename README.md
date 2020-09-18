@@ -6,8 +6,9 @@ Download release.zip, extract and drag OCUtil.app to Applications.
 
 # Usage
 - Adding a new utility:
-  Press + to download a tool from github or somewhere else* by pasting the download link or drag an extracted folder to /Downloads/OCUtil
-  
+  Press + and select:
+  Download: download a tool from github or somewhere else* by pasting the download link or dragging an extracted folder to /Downloads/OCUtil
+  Local: add an already existing folder or application by dragging it to Tool Directory and by filling in its name.
 - Using a utility:
   select a tool from the toolbar and press launch
   
