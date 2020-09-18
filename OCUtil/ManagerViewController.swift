@@ -36,12 +36,13 @@ class ManagerViewController: NSViewController{
                 items.forEach{ item in
                     if item.fileAdress == selected.fileAdress{
                         do{
-                            try ManagedContext?.delete(item)
+                            ManagedContext?.delete(item)
+                            try ManagedContext?.save()
+                            self.dismiss(self)
                         } catch {
                             print(error)
                         }
                     }
-                    
                 }
                 
                 

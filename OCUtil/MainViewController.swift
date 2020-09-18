@@ -103,6 +103,17 @@ class MainViewController: NSViewController{
                 print(error)
             }
         }
+        let fetch = NSFetchRequest<NSFetchRequestResult>(entityName: "Tool")
+        print(ManagedContext)
+        do {
+            let result = try ManagedContext?.fetch(fetch) as! [Tool]
+            result.forEach { item in
+                let outline = OutlineFeed.init(name: item.name, adress: item.adress, id: item.id, headline: item.headline, body: item.body, fileAdress: item.fileAdress, runAdress: item.runAdress)
+                data.append(outline)
+            }
+        } catch {
+            print(error)
+        }
         rootPath = root.path
         print("root path: \(root)")
         checkFolder(root: root.path)
