@@ -34,6 +34,7 @@ Download release.zip, extract and drag OCUtil.app to Applications.
   This package relies on:
  - Alamofire: MIT License - [Link](https://github.com/Alamofire/Alamofire/blob/master/LICENSE)
  - ZIPFoundation: MIT License - [Link](https://github.com/weichsel/ZIPFoundation/blob/master/LICENSE)
+ - macserial: BSD 3-Clause "New" or "Revised" License - [Link](https://github.com/acidanthera/OpenCorePkg/blob/master/LICENSE.txt)
  
 
 
