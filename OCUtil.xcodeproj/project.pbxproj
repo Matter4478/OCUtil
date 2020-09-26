@@ -7,31 +7,86 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6612C9C9251DD8C30072B2F4 /* PythonKit in Frameworks */ = {isa = PBXBuildFile; productRef = 6612C9C8251DD8C30072B2F4 /* PythonKit */; };
+		6657F4EB251E1C60000B1AA1 /* macserial in CopyFiles */ = {isa = PBXBuildFile; fileRef = 66EC0C36251DE4A1002196BE /* macserial */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
+		6657F4F4251E23E2000B1AA1 /* GenSMBIOS.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 66EC0C24251DDE6D002196BE /* GenSMBIOS.storyboard */; };
 		666E8C3C2510E16600D74555 /* Download.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 666E8C3B2510E16600D74555 /* Download.storyboard */; };
 		666E8C3E2510E38100D74555 /* InitiateDownload.swift in Sources */ = {isa = PBXBuildFile; fileRef = 666E8C3D2510E38100D74555 /* InitiateDownload.swift */; };
 		666E8C412510F3E000D74555 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 666E8C402510F3E000D74555 /* Alamofire */; };
 		666E8C442510F7DF00D74555 /* ZIPFoundation in Frameworks */ = {isa = PBXBuildFile; productRef = 666E8C432510F7DF00D74555 /* ZIPFoundation */; };
+		66820B4A251A108200DD694F /* MountRootEFI.command in Resources */ = {isa = PBXBuildFile; fileRef = 66820B49251A108200DD694F /* MountRootEFI.command */; };
+		66820B5D251A11DA00DD694F /* READMEMountEFI.md in Resources */ = {isa = PBXBuildFile; fileRef = 66820B50251A11DA00DD694F /* READMEMountEFI.md */; };
+		66820B67251A11DA00DD694F /* MountEFI.command in Resources */ = {isa = PBXBuildFile; fileRef = 66820B5B251A11DA00DD694F /* MountEFI.command */; };
+		66820B87251A14DA00DD694F /* disk.py in CopyFiles */ = {isa = PBXBuildFile; fileRef = 66820B53251A11DA00DD694F /* disk.py */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
+		66820B88251A14DA00DD694F /* run.py in CopyFiles */ = {isa = PBXBuildFile; fileRef = 66820B54251A11DA00DD694F /* run.py */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
+		66820B89251A14DA00DD694F /* rebuildcache.py in CopyFiles */ = {isa = PBXBuildFile; fileRef = 66820B55251A11DA00DD694F /* rebuildcache.py */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
+		66820B8A251A14DA00DD694F /* downloader.py in CopyFiles */ = {isa = PBXBuildFile; fileRef = 66820B56251A11DA00DD694F /* downloader.py */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
+		66820B8B251A14DA00DD694F /* __init__.py in CopyFiles */ = {isa = PBXBuildFile; fileRef = 66820B57251A11DA00DD694F /* __init__.py */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
+		66820B8C251A14DA00DD694F /* bdmesg.py in CopyFiles */ = {isa = PBXBuildFile; fileRef = 66820B58251A11DA00DD694F /* bdmesg.py */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
+		66820B8D251A14DA00DD694F /* utils.py in CopyFiles */ = {isa = PBXBuildFile; fileRef = 66820B59251A11DA00DD694F /* utils.py */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
+		66820B8E251A14DA00DD694F /* reveal.py in CopyFiles */ = {isa = PBXBuildFile; fileRef = 66820B5A251A11DA00DD694F /* reveal.py */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
 		6692FDC7250B960800011A04 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6692FDC6250B960800011A04 /* AppDelegate.swift */; };
-		6692FDC9250B960800011A04 /* PlistViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6692FDC8250B960800011A04 /* PlistViewController.swift */; };
 		6692FDCC250B960800011A04 /* OCUtil.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 6692FDCA250B960800011A04 /* OCUtil.xcdatamodeld */; };
 		6692FDCE250B960A00011A04 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6692FDCD250B960A00011A04 /* Assets.xcassets */; };
 		6692FDD1250B960A00011A04 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6692FDCF250B960A00011A04 /* Main.storyboard */; };
 		6692FDDA250BFB6100011A04 /* OutlineFeed.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6692FDD9250BFB6100011A04 /* OutlineFeed.swift */; };
 		6692FDDD250BFB9300011A04 /* Tool+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6692FDDB250BFB9300011A04 /* Tool+CoreDataClass.swift */; };
 		6692FDDE250BFB9300011A04 /* Tool+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6692FDDC250BFB9300011A04 /* Tool+CoreDataProperties.swift */; };
-		6692FDE0250C99AC00011A04 /* Plist.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6692FDDF250C99AC00011A04 /* Plist.storyboard */; };
 		6692FDE2250C9ADF00011A04 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6692FDE1250C9ADF00011A04 /* MainViewController.swift */; };
-		6692FDE6250CD9B500011A04 /* UtilityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6692FDE5250CD9B500011A04 /* UtilityViewController.swift */; };
 		6692FDE8250D12BB00011A04 /* ManagerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6692FDE7250D12BB00011A04 /* ManagerViewController.swift */; };
 		6692FDEA250D12C900011A04 /* Manager.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6692FDE9250D12C900011A04 /* Manager.storyboard */; };
+		66A902F3251FC10400CB661E /* macserialLICENSE.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 66A902F2251FC10400CB661E /* macserialLICENSE.rtf */; };
+		66EC0C28251DDE7E002196BE /* GenSMBIOS.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66EC0C27251DDE7E002196BE /* GenSMBIOS.swift */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		6657F4E5251E1C44000B1AA1 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = ScriptsGenSMBIOS;
+			dstSubfolderSpec = 7;
+			files = (
+				6657F4EB251E1C60000B1AA1 /* macserial in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		66820B86251A14B700DD694F /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = Scripts;
+			dstSubfolderSpec = 7;
+			files = (
+				66820B87251A14DA00DD694F /* disk.py in CopyFiles */,
+				66820B88251A14DA00DD694F /* run.py in CopyFiles */,
+				66820B89251A14DA00DD694F /* rebuildcache.py in CopyFiles */,
+				66820B8A251A14DA00DD694F /* downloader.py in CopyFiles */,
+				66820B8B251A14DA00DD694F /* __init__.py in CopyFiles */,
+				66820B8C251A14DA00DD694F /* bdmesg.py in CopyFiles */,
+				66820B8D251A14DA00DD694F /* utils.py in CopyFiles */,
+				66820B8E251A14DA00DD694F /* reveal.py in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		666E8C3B2510E16600D74555 /* Download.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Download.storyboard; sourceTree = "<group>"; };
 		666E8C3D2510E38100D74555 /* InitiateDownload.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InitiateDownload.swift; sourceTree = "<group>"; };
+		66820B49251A108200DD694F /* MountRootEFI.command */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; name = MountRootEFI.command; path = ../../../Downloads/OCUtil/MountRootEFI.command; sourceTree = "<group>"; };
+		66820B50251A11DA00DD694F /* READMEMountEFI.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = READMEMountEFI.md; sourceTree = "<group>"; };
+		66820B51251A11DA00DD694F /* .gitignore */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
+		66820B53251A11DA00DD694F /* disk.py */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.python; path = disk.py; sourceTree = "<group>"; };
+		66820B54251A11DA00DD694F /* run.py */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.python; path = run.py; sourceTree = "<group>"; };
+		66820B55251A11DA00DD694F /* rebuildcache.py */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.python; path = rebuildcache.py; sourceTree = "<group>"; };
+		66820B56251A11DA00DD694F /* downloader.py */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.python; path = downloader.py; sourceTree = "<group>"; };
+		66820B57251A11DA00DD694F /* __init__.py */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.python; path = __init__.py; sourceTree = "<group>"; };
+		66820B58251A11DA00DD694F /* bdmesg.py */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.python; path = bdmesg.py; sourceTree = "<group>"; };
+		66820B59251A11DA00DD694F /* utils.py */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.python; path = utils.py; sourceTree = "<group>"; };
+		66820B5A251A11DA00DD694F /* reveal.py */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.python; path = reveal.py; sourceTree = "<group>"; };
+		66820B5B251A11DA00DD694F /* MountEFI.command */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = MountEFI.command; sourceTree = "<group>"; };
+		66820B5C251A11DA00DD694F /* Mount EFI Automator Quick Action.zip */ = {isa = PBXFileReference; lastKnownFileType = archive.zip; path = "Mount EFI Automator Quick Action.zip"; sourceTree = "<group>"; };
 		6692FDC3250B960800011A04 /* OCUtil.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OCUtil.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6692FDC6250B960800011A04 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		6692FDC8250B960800011A04 /* PlistViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlistViewController.swift; sourceTree = "<group>"; };
 		6692FDCB250B960800011A04 /* OCUtil.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = OCUtil.xcdatamodel; sourceTree = "<group>"; };
 		6692FDCD250B960A00011A04 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		6692FDD0250B960A00011A04 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -40,11 +95,13 @@
 		6692FDD9250BFB6100011A04 /* OutlineFeed.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OutlineFeed.swift; sourceTree = "<group>"; };
 		6692FDDB250BFB9300011A04 /* Tool+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Tool+CoreDataClass.swift"; sourceTree = "<group>"; };
 		6692FDDC250BFB9300011A04 /* Tool+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Tool+CoreDataProperties.swift"; sourceTree = "<group>"; };
-		6692FDDF250C99AC00011A04 /* Plist.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Plist.storyboard; sourceTree = "<group>"; };
 		6692FDE1250C9ADF00011A04 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
-		6692FDE5250CD9B500011A04 /* UtilityViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UtilityViewController.swift; sourceTree = "<group>"; };
 		6692FDE7250D12BB00011A04 /* ManagerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManagerViewController.swift; sourceTree = "<group>"; };
 		6692FDE9250D12C900011A04 /* Manager.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Manager.storyboard; sourceTree = "<group>"; };
+		66A902F2251FC10400CB661E /* macserialLICENSE.rtf */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; path = macserialLICENSE.rtf; sourceTree = "<group>"; };
+		66EC0C24251DDE6D002196BE /* GenSMBIOS.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = GenSMBIOS.storyboard; sourceTree = "<group>"; };
+		66EC0C27251DDE7E002196BE /* GenSMBIOS.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenSMBIOS.swift; sourceTree = "<group>"; };
+		66EC0C36251DE4A1002196BE /* macserial */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.executable"; path = macserial; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,15 +111,45 @@
 			files = (
 				666E8C412510F3E000D74555 /* Alamofire in Frameworks */,
 				666E8C442510F7DF00D74555 /* ZIPFoundation in Frameworks */,
+				6612C9C9251DD8C30072B2F4 /* PythonKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		66820B4F251A11DA00DD694F /* MountEFI-update-2 */ = {
+			isa = PBXGroup;
+			children = (
+				66820B50251A11DA00DD694F /* READMEMountEFI.md */,
+				66820B51251A11DA00DD694F /* .gitignore */,
+				66820B52251A11DA00DD694F /* Scripts */,
+				66820B5B251A11DA00DD694F /* MountEFI.command */,
+				66820B5C251A11DA00DD694F /* Mount EFI Automator Quick Action.zip */,
+			);
+			path = "MountEFI-update-2";
+			sourceTree = "<group>";
+		};
+		66820B52251A11DA00DD694F /* Scripts */ = {
+			isa = PBXGroup;
+			children = (
+				66820B53251A11DA00DD694F /* disk.py */,
+				66820B54251A11DA00DD694F /* run.py */,
+				66820B55251A11DA00DD694F /* rebuildcache.py */,
+				66820B56251A11DA00DD694F /* downloader.py */,
+				66820B57251A11DA00DD694F /* __init__.py */,
+				66820B58251A11DA00DD694F /* bdmesg.py */,
+				66820B59251A11DA00DD694F /* utils.py */,
+				66820B5A251A11DA00DD694F /* reveal.py */,
+			);
+			path = Scripts;
+			sourceTree = "<group>";
+		};
 		6692FDBA250B960800011A04 = {
 			isa = PBXGroup;
 			children = (
+				66820B49251A108200DD694F /* MountRootEFI.command */,
+				66820B4F251A11DA00DD694F /* MountEFI-update-2 */,
 				6692FDC5250B960800011A04 /* OCUtil */,
 				6692FDC4250B960800011A04 /* Products */,
 			);
@@ -79,25 +166,66 @@
 		6692FDC5250B960800011A04 /* OCUtil */ = {
 			isa = PBXGroup;
 			children = (
-				6692FDDB250BFB9300011A04 /* Tool+CoreDataClass.swift */,
-				6692FDDC250BFB9300011A04 /* Tool+CoreDataProperties.swift */,
-				6692FDE1250C9ADF00011A04 /* MainViewController.swift */,
-				6692FDC8250B960800011A04 /* PlistViewController.swift */,
+				66EC0C23251DDE36002196BE /* GenSMBIOS */,
+				66EC0C1D251DD940002196BE /* Standards */,
+				66EC0C1E251DD953002196BE /* Main */,
+				66EC0C21251DD9B0002196BE /* Download */,
+				66EC0C20251DD99C002196BE /* Manager */,
 				6692FDCD250B960A00011A04 /* Assets.xcassets */,
-				6692FDCF250B960A00011A04 /* Main.storyboard */,
-				666E8C3B2510E16600D74555 /* Download.storyboard */,
-				666E8C3D2510E38100D74555 /* InitiateDownload.swift */,
-				6692FDDF250C99AC00011A04 /* Plist.storyboard */,
-				6692FDE7250D12BB00011A04 /* ManagerViewController.swift */,
-				6692FDE9250D12C900011A04 /* Manager.storyboard */,
-				6692FDE5250CD9B500011A04 /* UtilityViewController.swift */,
-				6692FDC6250B960800011A04 /* AppDelegate.swift */,
 				6692FDD2250B960A00011A04 /* Info.plist */,
 				6692FDD3250B960A00011A04 /* OCUtil.entitlements */,
-				6692FDCA250B960800011A04 /* OCUtil.xcdatamodeld */,
-				6692FDD9250BFB6100011A04 /* OutlineFeed.swift */,
 			);
 			path = OCUtil;
+			sourceTree = "<group>";
+		};
+		66EC0C1D251DD940002196BE /* Standards */ = {
+			isa = PBXGroup;
+			children = (
+				6692FDCA250B960800011A04 /* OCUtil.xcdatamodeld */,
+				6692FDD9250BFB6100011A04 /* OutlineFeed.swift */,
+				6692FDDB250BFB9300011A04 /* Tool+CoreDataClass.swift */,
+				6692FDDC250BFB9300011A04 /* Tool+CoreDataProperties.swift */,
+				6692FDC6250B960800011A04 /* AppDelegate.swift */,
+			);
+			path = Standards;
+			sourceTree = "<group>";
+		};
+		66EC0C1E251DD953002196BE /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				6692FDE1250C9ADF00011A04 /* MainViewController.swift */,
+				6692FDCF250B960A00011A04 /* Main.storyboard */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
+		66EC0C20251DD99C002196BE /* Manager */ = {
+			isa = PBXGroup;
+			children = (
+				6692FDE7250D12BB00011A04 /* ManagerViewController.swift */,
+				6692FDE9250D12C900011A04 /* Manager.storyboard */,
+			);
+			path = Manager;
+			sourceTree = "<group>";
+		};
+		66EC0C21251DD9B0002196BE /* Download */ = {
+			isa = PBXGroup;
+			children = (
+				666E8C3B2510E16600D74555 /* Download.storyboard */,
+				666E8C3D2510E38100D74555 /* InitiateDownload.swift */,
+			);
+			path = Download;
+			sourceTree = "<group>";
+		};
+		66EC0C23251DDE36002196BE /* GenSMBIOS */ = {
+			isa = PBXGroup;
+			children = (
+				66EC0C36251DE4A1002196BE /* macserial */,
+				66EC0C24251DDE6D002196BE /* GenSMBIOS.storyboard */,
+				66EC0C27251DDE7E002196BE /* GenSMBIOS.swift */,
+				66A902F2251FC10400CB661E /* macserialLICENSE.rtf */,
+			);
+			path = GenSMBIOS;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -110,6 +238,8 @@
 				6692FDBF250B960800011A04 /* Sources */,
 				6692FDC0250B960800011A04 /* Frameworks */,
 				6692FDC1250B960800011A04 /* Resources */,
+				66820B86251A14B700DD694F /* CopyFiles */,
+				6657F4E5251E1C44000B1AA1 /* CopyFiles */,
 			);
 			buildRules = (
 			);
@@ -119,6 +249,7 @@
 			packageProductDependencies = (
 				666E8C402510F3E000D74555 /* Alamofire */,
 				666E8C432510F7DF00D74555 /* ZIPFoundation */,
+				6612C9C8251DD8C30072B2F4 /* PythonKit */,
 			);
 			productName = OCUtil;
 			productReference = 6692FDC3250B960800011A04 /* OCUtil.app */;
@@ -131,7 +262,7 @@
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = YES;
-				LastSwiftUpdateCheck = 1170;
+				LastSwiftUpdateCheck = 1200;
 				LastUpgradeCheck = 1200;
 				ORGANIZATIONNAME = "M. De Vries";
 				TargetAttributes = {
@@ -152,6 +283,7 @@
 			packageReferences = (
 				666E8C3F2510F3E000D74555 /* XCRemoteSwiftPackageReference "Alamofire" */,
 				666E8C422510F7DF00D74555 /* XCRemoteSwiftPackageReference "ZIPFoundation" */,
+				6612C9C7251DD8C30072B2F4 /* XCRemoteSwiftPackageReference "PythonKit" */,
 			);
 			productRefGroup = 6692FDC4250B960800011A04 /* Products */;
 			projectDirPath = "";
@@ -167,8 +299,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6657F4F4251E23E2000B1AA1 /* GenSMBIOS.storyboard in Resources */,
+				66820B4A251A108200DD694F /* MountRootEFI.command in Resources */,
 				6692FDEA250D12C900011A04 /* Manager.storyboard in Resources */,
-				6692FDE0250C99AC00011A04 /* Plist.storyboard in Resources */,
+				66820B5D251A11DA00DD694F /* READMEMountEFI.md in Resources */,
+				66A902F3251FC10400CB661E /* macserialLICENSE.rtf in Resources */,
+				66820B67251A11DA00DD694F /* MountEFI.command in Resources */,
 				6692FDCE250B960A00011A04 /* Assets.xcassets in Resources */,
 				6692FDD1250B960A00011A04 /* Main.storyboard in Resources */,
 				666E8C3C2510E16600D74555 /* Download.storyboard in Resources */,
@@ -183,12 +319,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				6692FDE2250C9ADF00011A04 /* MainViewController.swift in Sources */,
-				6692FDE6250CD9B500011A04 /* UtilityViewController.swift in Sources */,
 				6692FDDD250BFB9300011A04 /* Tool+CoreDataClass.swift in Sources */,
 				6692FDE8250D12BB00011A04 /* ManagerViewController.swift in Sources */,
 				666E8C3E2510E38100D74555 /* InitiateDownload.swift in Sources */,
 				6692FDDA250BFB6100011A04 /* OutlineFeed.swift in Sources */,
-				6692FDC9250B960800011A04 /* PlistViewController.swift in Sources */,
+				66EC0C28251DDE7E002196BE /* GenSMBIOS.swift in Sources */,
 				6692FDCC250B960800011A04 /* OCUtil.xcdatamodeld in Sources */,
 				6692FDC7250B960800011A04 /* AppDelegate.swift in Sources */,
 				6692FDDE250BFB9300011A04 /* Tool+CoreDataProperties.swift in Sources */,
@@ -332,6 +467,7 @@
 				CODE_SIGN_IDENTITY = "-";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_TEAM = 7KH6ST6L2Y;
 				ENABLE_HARDENED_RUNTIME = YES;
 				INFOPLIST_FILE = OCUtil/Info.plist;
@@ -340,6 +476,7 @@
 					"@executable_path/../Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 10.13;
+				MARKETING_VERSION = 1.2.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.merlijn.OCUtil;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
@@ -354,6 +491,7 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_TEAM = 7KH6ST6L2Y;
 				ENABLE_HARDENED_RUNTIME = YES;
 				INFOPLIST_FILE = OCUtil/Info.plist;
@@ -362,6 +500,7 @@
 					"@executable_path/../Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 10.13;
+				MARKETING_VERSION = 1.2.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.merlijn.OCUtil;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -393,6 +532,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		6612C9C7251DD8C30072B2F4 /* XCRemoteSwiftPackageReference "PythonKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/pvieito/PythonKit.git";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
 		666E8C3F2510F3E000D74555 /* XCRemoteSwiftPackageReference "Alamofire" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/Alamofire/Alamofire.git";
@@ -412,6 +559,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		6612C9C8251DD8C30072B2F4 /* PythonKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 6612C9C7251DD8C30072B2F4 /* XCRemoteSwiftPackageReference "PythonKit" */;
+			productName = PythonKit;
+		};
 		666E8C402510F3E000D74555 /* Alamofire */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 666E8C3F2510F3E000D74555 /* XCRemoteSwiftPackageReference "Alamofire" */;

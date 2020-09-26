@@ -22,9 +22,20 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 
     func applicationDidFinishLaunching(_ aNotification: Notification) {
         print("applicationDidFinishLaunching()")
-        
-        
-        
+        if UserDefaults.standard.bool(forKey: "FirstLaunch") == true{
+            print("firstLaunch")
+//            var target = FileManager.default.homeDirectoryForCurrentUser
+//            target.appendPathComponent("/Downloads/OCUtil/")
+//            target.appendPathComponent("/MountRootEFI.command")
+//
+//            let command = "#!/bin/zsh \necho Mounting root EFI \nsudo /Users/mdevries/Downloads/OCUtil/MountEFI-update/MountEFI.command / \necho Done!"
+//            do {
+//                try command.write(to: target, atomically: true, encoding: .ascii)
+//            } catch {
+//                print(error)
+//            }
+        }
+        UserDefaults.standard.set(false, forKey: "FirstLaunch")
     }
 
     func applicationWillTerminate(_ aNotification: Notification) {

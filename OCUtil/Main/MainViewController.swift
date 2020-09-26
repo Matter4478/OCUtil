@@ -29,6 +29,37 @@ class MainViewController: NSViewController{
     var content: [String] = []
     
     
+    @IBAction func GenSMBIOS(_ sender: Any) {
+        self.performSegue(withIdentifier: "GenSMBIOS", sender: self)
+    }
+    @IBAction func mountRootEFI(_ sender: Any) {
+        print("mount root efi")
+//        var mountEFI = FileManager.default.homeDirectoryForCurrentUser
+//        mountEFI.appendPathComponent("/Downloads/MountRootEFI.command")
+        var mountEFI = Bundle.main.bundleURL
+        mountEFI.appendPathComponent("/Contents/Resources/MountRootEFI.command")
+
+        if #available(OSX 10.15, *) {
+            let args = NSWorkspace.OpenConfiguration()
+            args.arguments = [""]
+            args.promptsUserIfNeeded = true
+            args.addsToRecentItems = false
+            args.allowsRunningApplicationSubstitution = false
+            do {
+                try NSWorkspace.shared.open(mountEFI, configuration: args, completionHandler: { (app, error) in
+                    print(app)
+                    print(error)
+                })
+            } catch {
+                print(error)
+            }
+        } else {
+            // Fallback on earlier versions
+            print("fallback")
+            NSWorkspace.shared.open(mountEFI)
+        }
+
+    }
     
     func checkFolder(root: String){
         do {
@@ -51,6 +82,10 @@ class MainViewController: NSViewController{
                 print(result)
             } else if (url.absoluteString.contains(".command")){
                 print("\(url.absoluteString ) is an executable .command")
+                let result = OutlineFeed(name: item, adress: "", id: UUID(), headline: "", body: "", fileAdress:   dirurl!.absoluteString , runAdress: url.absoluteString )
+                data.append(result)
+                print(result)
+            } else if (url.absoluteString.contains(".sh")){
                 let result = OutlineFeed(name: item, adress: "", id: UUID(), headline: "", body: "", fileAdress:   dirurl!.absoluteString , runAdress: url.absoluteString )
                 data.append(result)
                 print(result)
@@ -177,11 +212,23 @@ class MainViewController: NSViewController{
         //Outline.outlineTableColumn!.headerCell.stringValue = "Utilities"
         }
     
+    override func viewDidAppear() {
+        super.viewDidAppear()
+        self.Refresh(self)
+    }
+    
+    override func viewWillAppear() {
+        super.viewWillAppear()
+        self.Refresh(self)
+    }
+    
     override func viewDidDisappear() {
         super.viewDidDisappear()
         //stop listening for notifications
         NotificationCenter.default.removeObserver(self)
     }
+    
+    
     
     override var representedObject: Any?{
         didSet{
@@ -221,12 +268,10 @@ extension MainViewController: NSOutlineViewDelegate{
     }
     
     func outlineViewSelectionDidChange(_ notification: Notification) {
-        if let item = Outline.item(atRow: Outline.selectedRow) as? OutlineFeed{
+        var item = Outline.item(atRow: Outline.selectedRow) as! OutlineFeed
             selected = item
             UtilName.stringValue = selected.name
-        }
     }
-
 }
 
 
