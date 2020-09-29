@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		6612C9C9251DD8C30072B2F4 /* PythonKit in Frameworks */ = {isa = PBXBuildFile; productRef = 6612C9C8251DD8C30072B2F4 /* PythonKit */; };
 		6657F4EB251E1C60000B1AA1 /* macserial in CopyFiles */ = {isa = PBXBuildFile; fileRef = 66EC0C36251DE4A1002196BE /* macserial */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
 		6657F4F4251E23E2000B1AA1 /* GenSMBIOS.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 66EC0C24251DDE6D002196BE /* GenSMBIOS.storyboard */; };
 		666E8C3C2510E16600D74555 /* Download.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 666E8C3B2510E16600D74555 /* Download.storyboard */; };
@@ -111,7 +110,6 @@
 			files = (
 				666E8C412510F3E000D74555 /* Alamofire in Frameworks */,
 				666E8C442510F7DF00D74555 /* ZIPFoundation in Frameworks */,
-				6612C9C9251DD8C30072B2F4 /* PythonKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -257,7 +255,6 @@
 			packageProductDependencies = (
 				666E8C402510F3E000D74555 /* Alamofire */,
 				666E8C432510F7DF00D74555 /* ZIPFoundation */,
-				6612C9C8251DD8C30072B2F4 /* PythonKit */,
 			);
 			productName = OCUtil;
 			productReference = 6692FDC3250B960800011A04 /* OCUtil.app */;
@@ -291,7 +288,6 @@
 			packageReferences = (
 				666E8C3F2510F3E000D74555 /* XCRemoteSwiftPackageReference "Alamofire" */,
 				666E8C422510F7DF00D74555 /* XCRemoteSwiftPackageReference "ZIPFoundation" */,
-				6612C9C7251DD8C30072B2F4 /* XCRemoteSwiftPackageReference "PythonKit" */,
 			);
 			productRefGroup = 6692FDC4250B960800011A04 /* Products */;
 			projectDirPath = "";
@@ -476,6 +472,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 2;
+				DEVELOPMENT_ASSET_PATHS = ../../../Downloads/OCUtil/MountRootEFI.command;
 				DEVELOPMENT_TEAM = 7KH6ST6L2Y;
 				ENABLE_HARDENED_RUNTIME = YES;
 				INFOPLIST_FILE = OCUtil/Info.plist;
@@ -500,6 +497,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 2;
+				DEVELOPMENT_ASSET_PATHS = ../../../Downloads/OCUtil/MountRootEFI.command;
 				DEVELOPMENT_TEAM = 7KH6ST6L2Y;
 				ENABLE_HARDENED_RUNTIME = YES;
 				INFOPLIST_FILE = OCUtil/Info.plist;
@@ -540,14 +538,6 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		6612C9C7251DD8C30072B2F4 /* XCRemoteSwiftPackageReference "PythonKit" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/pvieito/PythonKit.git";
-			requirement = {
-				branch = master;
-				kind = branch;
-			};
-		};
 		666E8C3F2510F3E000D74555 /* XCRemoteSwiftPackageReference "Alamofire" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/Alamofire/Alamofire.git";
@@ -567,11 +557,6 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		6612C9C8251DD8C30072B2F4 /* PythonKit */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 6612C9C7251DD8C30072B2F4 /* XCRemoteSwiftPackageReference "PythonKit" */;
-			productName = PythonKit;
-		};
 		666E8C402510F3E000D74555 /* Alamofire */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 666E8C3F2510F3E000D74555 /* XCRemoteSwiftPackageReference "Alamofire" */;

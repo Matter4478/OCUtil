@@ -10,16 +10,6 @@ import Foundation
 import Cocoa
 import PythonKit
 class GenSMBIOSViewController: NSViewController{
-    class macSerials: NSObject, PythonConvertible{
-        var pythonObject: PythonObject = []
-        
-        var MacType: String = ""
-        var Serial: String = ""
-        var BoardSerial: String = ""
-        var SmUUID: String = ""
-    }
-    
-    
     @IBAction func OpenHelp(_ sender: Any) {
         NSWorkspace.shared.open(URL(string: "https://github.com/Matter4478/OCUtil/blob/master/README.md")!)
     }
@@ -113,43 +103,6 @@ class GenSMBIOSViewController: NSViewController{
         //if there's somesort of error... Look here!
         let error = String(decoding: errorPipe.fileHandleForReading.readDataToEndOfFile(), as: UTF8.self)
         print(error)
-        
-        
-        
-//        let sys = Python.import("sys")
-
-//        var targetString = targetURL.absoluteString
-//        targetString.removeFirst(7)
-//        sys.path.append(targetString)
-//        print(sys.path)
-//        let smbios = Python.import("GenSMBIOS")
-//        print(smbios)
-//        let Smbios = smbios.Smbios()
-//        print(Smbios)
-//        let macserial = Smbios._get_binary()
-//        print(macserial)
-//        let macType = macTypeSelect.state.rawValue
-//        let macGen = macGenSelect.state.rawValue
-//        var smtype: String = ""
-//        if macType == 0{
-//            smtype = "iMac"
-//        } else if macType == 1{
-//           smtype = "MacBookPro"
-//        } else {
-//            smtype = "MacPro"
-//        }
-//        if macGen == 0{
-//            smtype.append("18,3")
-//        } else if macGen == 1{
-//            smtype.append("17,1")
-//        } else {
-//            smtype.append("16,1")
-//        }
-//        print(smtype)
-//        let result = Smbios.s._get_smbios(Smbios, macserial, smtype)
-//        print(result)
-//
-        
     }
 
     
