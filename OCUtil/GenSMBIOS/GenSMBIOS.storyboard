@@ -6,49 +6,37 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--GenSMB iOS View Controller-->
+        <!--Generate SMBIOS-->
         <scene sceneID="M1A-II-AOS">
             <objects>
-                <viewController id="BnS-wG-GmL" customClass="GenSMBIOSViewController" customModule="OCUtil" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="Generate SMBIOS" id="BnS-wG-GmL" customClass="GenSMBIOSViewController" customModule="OCUtil" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" id="aXp-ZH-YJz">
-                        <rect key="frame" x="0.0" y="0.0" width="450" height="197"/>
+                        <rect key="frame" x="0.0" y="0.0" width="450" height="165"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
                             <popUpButton verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="HYN-iq-xnx">
-                                <rect key="frame" x="17" y="121" width="94" height="25"/>
+                                <rect key="frame" x="17" y="121" width="148" height="25"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <popUpButtonCell key="cell" type="push" title="iMac" bezelStyle="rounded" alignment="left" lineBreakMode="truncatingTail" state="on" borderStyle="borderAndBezel" imageScaling="proportionallyDown" inset="2" selectedItem="VX3-ld-FmC" id="TaT-wk-BgZ">
                                     <behavior key="behavior" lightByBackground="YES" lightByGray="YES"/>
-                                    <font key="font" metaFont="menu"/>
+                                    <font key="font" size="13" name="HelveticaNeue"/>
                                     <menu key="menu" id="jpB-HY-caT">
                                         <items>
-                                            <menuItem title="iMac" state="on" id="VX3-ld-FmC"/>
-                                            <menuItem title="MacBookPro" tag="1" id="Zwr-NN-ZuR"/>
-                                            <menuItem title="MacPro" tag="2" id="aGW-B7-8Zi"/>
+                                            <menuItem title="iMac" state="on" image="display" catalog="system" id="VX3-ld-FmC"/>
+                                            <menuItem title="iMacPro" image="display" catalog="system" id="g4n-dd-g7d"/>
+                                            <menuItem title="Macmini" image="macmini" catalog="system" id="1N7-YJ-N60"/>
+                                            <menuItem title="MacPro" image="macpro.gen1" catalog="system" tag="2" id="aGW-B7-8Zi"/>
+                                            <menuItem title="MacBook" image="laptopcomputer" catalog="system" id="6EG-Wv-lhg"/>
+                                            <menuItem title="MacBookAir" image="laptopcomputer" catalog="system" id="qJZ-0p-cmK"/>
+                                            <menuItem title="MacBookPro" image="laptopcomputer" catalog="system" tag="1" id="Zwr-NN-ZuR"/>
+                                            <menuItem title="Xserve" image="xserve" catalog="system" tag="1" id="RAQ-vM-wPq"/>
                                         </items>
                                     </menu>
                                 </popUpButtonCell>
-                            </popUpButton>
-                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="1QG-C1-UYK">
-                                <rect key="frame" x="18" y="153" width="414" height="24"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                <textFieldCell key="cell" lineBreakMode="clipping" title="GenSMBIOS" id="FLO-sn-Pe3">
-                                    <font key="font" metaFont="system"/>
-                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
-                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
-                                </textFieldCell>
-                            </textField>
-                            <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="VmA-LF-4hY">
-                                <rect key="frame" x="225" y="118" width="90" height="32"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                <buttonCell key="cell" type="push" title="Generate" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="Npm-Ym-b8C">
-                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                                    <font key="font" metaFont="system"/>
-                                </buttonCell>
                                 <connections>
-                                    <action selector="Generate:" target="BnS-wG-GmL" id="kbc-jK-al1"/>
+                                    <action selector="SelectedModel:" target="BnS-wG-GmL" id="dRK-u9-ruz"/>
                                 </connections>
-                            </button>
+                            </popUpButton>
                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="eK4-9c-TFh">
                                 <rect key="frame" x="18" y="92" width="38" height="16"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
@@ -92,7 +80,7 @@
                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="mnb-AN-SCG">
                                 <rect key="frame" x="113" y="92" width="319" height="16"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                <textFieldCell key="cell" lineBreakMode="clipping" title="Label" id="8C3-qJ-jdH">
+                                <textFieldCell key="cell" lineBreakMode="clipping" placeholderString="empty" id="8C3-qJ-jdH">
                                     <font key="font" metaFont="system"/>
                                     <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                                     <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
@@ -101,7 +89,7 @@
                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="whE-pC-puE">
                                 <rect key="frame" x="113" y="68" width="319" height="16"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                <textFieldCell key="cell" lineBreakMode="clipping" title="Label" id="SSw-O9-4Yu">
+                                <textFieldCell key="cell" lineBreakMode="clipping" placeholderString="empty" id="SSw-O9-4Yu">
                                     <font key="font" metaFont="system"/>
                                     <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                                     <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
@@ -110,7 +98,7 @@
                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ioI-pq-RcV">
                                 <rect key="frame" x="113" y="44" width="319" height="16"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                <textFieldCell key="cell" lineBreakMode="clipping" title="Label" id="alE-fd-QBM">
+                                <textFieldCell key="cell" lineBreakMode="clipping" placeholderString="empty" id="alE-fd-QBM">
                                     <font key="font" metaFont="system"/>
                                     <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                                     <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
@@ -123,27 +111,43 @@
                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="gpK-Eo-zUJ">
                                 <rect key="frame" x="113" y="20" width="319" height="16"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                <textFieldCell key="cell" lineBreakMode="clipping" title="Label" id="WPf-Ab-RjI">
+                                <textFieldCell key="cell" lineBreakMode="clipping" placeholderString="empty" id="WPf-Ab-RjI">
                                     <font key="font" metaFont="system"/>
                                     <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                                     <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>
                             </textField>
                             <popUpButton verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="cBz-mf-XwI">
-                                <rect key="frame" x="124" y="121" width="78" height="25"/>
+                                <rect key="frame" x="166" y="121" width="78" height="25"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                <popUpButtonCell key="cell" type="push" title="18,3" bezelStyle="rounded" alignment="left" lineBreakMode="truncatingTail" state="on" borderStyle="borderAndBezel" imageScaling="proportionallyDown" inset="2" selectedItem="BCg-rj-77Y" id="C6m-Xe-3Nd">
+                                <popUpButtonCell key="cell" type="push" bezelStyle="rounded" alignment="left" lineBreakMode="truncatingTail" borderStyle="borderAndBezel" imageScaling="proportionallyDown" inset="2" id="C6m-Xe-3Nd">
                                     <behavior key="behavior" lightByBackground="YES" lightByGray="YES"/>
                                     <font key="font" metaFont="menu"/>
-                                    <menu key="menu" id="uOu-9o-yTC">
-                                        <items>
-                                            <menuItem title="18,3" state="on" id="BCg-rj-77Y"/>
-                                            <menuItem title="17,1" tag="1" id="mDe-x5-gaj"/>
-                                            <menuItem title="16,1" tag="2" id="Ljr-jF-hTh"/>
-                                        </items>
-                                    </menu>
+                                    <menu key="menu" id="uOu-9o-yTC"/>
                                 </popUpButtonCell>
                             </popUpButton>
+                            <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="VmA-LF-4hY">
+                                <rect key="frame" x="241" y="118" width="90" height="32"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <buttonCell key="cell" type="push" title="Generate" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="Npm-Ym-b8C">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                </buttonCell>
+                                <connections>
+                                    <action selector="Generate:" target="BnS-wG-GmL" id="kbc-jK-al1"/>
+                                </connections>
+                            </button>
+                            <button horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="plf-sr-bKj">
+                                <rect key="frame" x="407" y="12" width="25" height="25"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <buttonCell key="cell" type="help" bezelStyle="helpButton" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="noR-Yn-xH1">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                </buttonCell>
+                                <connections>
+                                    <action selector="OpenHelp:" target="BnS-wG-GmL" id="pw0-NY-g8q"/>
+                                </connections>
+                            </button>
                         </subviews>
                     </view>
                     <connections>
@@ -158,7 +162,14 @@
                 </viewController>
                 <customObject id="Xo7-yq-dzw" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="11" y="93.5"/>
+            <point key="canvasLocation" x="11" y="77.5"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="display" catalog="system" width="19" height="15"/>
+        <image name="laptopcomputer" catalog="system" width="22" height="13"/>
+        <image name="macmini" catalog="system" width="19" height="10"/>
+        <image name="macpro.gen1" catalog="system" width="17" height="17"/>
+        <image name="xserve" catalog="system" width="18" height="13"/>
+    </resources>
 </document>

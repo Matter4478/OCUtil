@@ -18,7 +18,6 @@ class InitiateDownload: NSViewController{
     @IBOutlet weak var TextField: NSTextField!
     @IBOutlet weak var Indicator: NSProgressIndicator!
     @IBOutlet weak var Status: NSTextField!
-    @IBOutlet weak var LocalStatus: NSTextField!
     @IBOutlet weak var LocalName: NSTextField!
     var ManagedContext: NSManagedObjectContext?
     
@@ -44,6 +43,7 @@ class InitiateDownload: NSViewController{
     
     @IBAction func Start(_ sender: Any) {
         Indicator.isIndeterminate = true
+        Indicator.startAnimation(self)
         Status.stringValue = "Resolving URL..."
         
         let targeturl = URL(string: "file://\(rootPath)")
@@ -62,33 +62,32 @@ class InitiateDownload: NSViewController{
 
         AF.download(TextField.stringValue, to: destination).response { response in
                    print(response)
-            if response.error != nil{
-                print(response.error)
-                self.Indicator.isIndeterminate = false
-                self.Status.stringValue = "Couldn't download package!"
-            }
-                    
-                   if response.error == nil, let result = response.fileURL?.path {
-                    print(response)
-                    print("resulted path: \(result)")
-                    self.Status.stringValue = "Unpacking..."
-                    if result.contains(".zip"){
-                        do {
-                            try FileManager.default.createDirectory(at: extracturl!, withIntermediateDirectories: false, attributes: [:])
-                            try FileManager.default.unzipItem(at: response.fileURL!, to: targeturl!)
-                            try FileManager.default.removeItem(at: response.fileURL!)
-                        } catch {
-                            print(error)
-                            self.Status.stringValue = "Failed to extract! \(error)"
-                        }
+        if response.error != nil{
+            print(response.error)
+            self.Indicator.isIndeterminate = false
+            self.Status.stringValue = "Couldn't download package!"
+        }
+        if response.error == nil, let result = response.fileURL?.path {
+            print(response)
+            print("resulted path: \(result)")
+            self.Status.stringValue = "Unpacking..."
+            if result.contains(".zip"){
+                do {
+                    try FileManager.default.createDirectory(at: extracturl!, withIntermediateDirectories: false, attributes: [:])
+                    try FileManager.default.unzipItem(at: response.fileURL!, to: targeturl!)
+                    try FileManager.default.removeItem(at: response.fileURL!)
+                    } catch {
+                        print(error)
+                        self.Status.stringValue = "Failed to extract! \(error)"
                     }
+                }
                     
-                    self.Indicator.isIndeterminate = false
-                    self.Status.stringValue = "Succes!"
-                    NotificationCenter.default.post(Notification(name: MainViewController.notificationName, object: nil, userInfo: ["Refresh" : true]))
-                    self.dismiss(self)
-                    
+                self.Indicator.isIndeterminate = false
+                self.Status.stringValue = "Succes!"
+                NotificationCenter.default.post(Notification(name: MainViewController.notificationName, object: nil, userInfo: ["Refresh" : true]))
+                self.dismiss(self)
             }
+            self.Indicator.stopAnimation(self)
         }
     }
     

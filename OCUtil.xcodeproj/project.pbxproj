@@ -166,6 +166,7 @@
 		6692FDC5250B960800011A04 /* OCUtil */ = {
 			isa = PBXGroup;
 			children = (
+				66A9031D25232CAE00CB661E /* ProperTree */,
 				66EC0C23251DDE36002196BE /* GenSMBIOS */,
 				66EC0C1D251DD940002196BE /* Standards */,
 				66EC0C1E251DD953002196BE /* Main */,
@@ -176,6 +177,13 @@
 				6692FDD3250B960A00011A04 /* OCUtil.entitlements */,
 			);
 			path = OCUtil;
+			sourceTree = "<group>";
+		};
+		66A9031D25232CAE00CB661E /* ProperTree */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ProperTree;
 			sourceTree = "<group>";
 		};
 		66EC0C1D251DD940002196BE /* Standards */ = {
