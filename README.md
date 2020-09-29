@@ -29,12 +29,12 @@ Download release.zip, extract and drag OCUtil.app to Applications.
   If you spot a mistake, find a bug or just have a brilliant idea, please open an issue or propose a contribution.
  
 # License
-  This package is licensed under the MIT license.
- 
-  This package relies on:
+  This package is licensed under the MIT license. 
+  Dependencies are licensed off their original licenses:
  - Alamofire: MIT License - [Link](https://github.com/Alamofire/Alamofire/blob/master/LICENSE)
  - ZIPFoundation: MIT License - [Link](https://github.com/weichsel/ZIPFoundation/blob/master/LICENSE)
  - macserial: BSD 3-Clause "New" or "Revised" License - [Link](https://github.com/acidanthera/OpenCorePkg/blob/master/LICENSE.txt)
+ - MountEFI: [Link](https://github.com/corpnewt/MountEFI)
  
 
 
